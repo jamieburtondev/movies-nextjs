@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1em;
+    min-width: 15%;
+}

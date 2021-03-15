@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
 import { SEARCH } from "../../constants";
 import { searchById, imagePath } from "../../util";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function SearchMovie(props) {
