@@ -4,7 +4,7 @@ import { searchPage } from "../../util";
 import Link from "next/link";
 import styles from './search.module.css';
 
-const Search = () => {
+export default function Search() {
   const [type, setType] = useState(SEARCH.MOVIES);
   const [query, setQuery] = useState("");
 
@@ -16,7 +16,6 @@ const Search = () => {
         <input className={styles.input} onChange={(e) => setQuery(e.target.value)} type="text" />
         <select className={styles.select} value={type} onChange={(e) => setType(e.target.value)}>
           <option value={SEARCH.MOVIES}> Movies </option>
-          <option value={SEARCH.TV}> Television </option>
           <option value={SEARCH.PERSON}> Person </option>
         </select>
 
@@ -25,5 +24,3 @@ const Search = () => {
     </div>
   );
 };
-
-export default Search;

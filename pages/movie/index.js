@@ -1,5 +1,5 @@
 import { SEARCH } from "../../constants";
-import { searchMovieDb, imagePath } from "../../util";
+import { searchMovieDb, getMovieImage } from "../../util";
 import Link from "next/link";
 import Image from "next/image";
 import Results from '../../components/results';

@@ -1,5 +1,13 @@
 export const SEARCH = {
     MOVIES: 'movie',
-    TV: 'tv',
     PERSON: 'person'
 }
+
+export const CREW = {
+    DIRECTOR: "Director",
+    EDITOR: "Editor",
+    PRODUCER: "Producer",
+    EXECUTIVE_PRODUCER: "Executive Producer",
+    SCREENPLAY: "Screenplay",
+    STORY: "Story",
+  };
