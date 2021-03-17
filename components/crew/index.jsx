@@ -9,7 +9,7 @@ export default function Crew({ crew, cast, actor }) {
         <div>
           <h2> Acting </h2>
           {cast.map((movie) => (
-            <div>
+            <div key={`movie-cast-${movie.id}`}>
               <p><Link href={`/movie/${movie.id}`}><a>{movie.title}</a></Link></p>
               <p> As: {movie.character} </p>
             </div>
@@ -28,10 +28,10 @@ export default function Crew({ crew, cast, actor }) {
         if (!crew[position].length) return;
 
         return (
-          <div>
+          <div key={position}>
             <h2> {position}</h2>
             {crew[position].map((member) => (
-              <p>
+              <p key={`movie-crew-${member.id}`}>
                 {member.title && (
                   <Link href={`/movie/${member.id}`}>
                     <a>{member.title}</a>
