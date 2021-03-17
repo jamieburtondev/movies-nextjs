@@ -2,9 +2,21 @@ import React from "react";
 import { CREW } from "../../constants";
 import Link from "next/link";
 
-export default function Crew({ crew }) {
+export default function Crew({ crew, cast, actor }) {
   return (
     <div>
+      {actor && (
+        <div>
+          <h2> Acting </h2>
+          {cast.map((movie) => (
+            <div>
+              <p><Link href={`/movie/${movie.id}`}><a>{movie.title}</a></Link></p>
+              <p> As: {movie.character} </p>
+            </div>
+          ))}
+        </div>
+      )}
+
       {[
         CREW.DIRECTOR,
         CREW.SCREENPLAY,

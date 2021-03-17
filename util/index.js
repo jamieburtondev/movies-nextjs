@@ -1,3 +1,5 @@
+import { CREW } from "../constants";
+
 export const searchPage = ({ type, query }) => `/${type}?search=${query}`;
 
 const getJson = async (link) => {
@@ -50,10 +52,26 @@ export const getPersonCredits = async ({ id }) =>
     `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=${process.env.API_KEY}`
   );
 
-export const getPersonImages = async ({ id }) =>
-  await getJson(
-    `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.API_KEY}`
-  );
-
 export const getMovieImage = (image) =>
   `https://image.tmdb.org/t/p/w500/${image}`;
+
+export const getPositions = ({ credits }) => {
+  const crew = {};
+  const crewPositions = Object.values(CREW);
+  crewPositions.forEach((position) => (crew[position] = []));
+
+  credits.crew.forEach((member) => {
+    if (crewPositions.includes(member.job)) {
+      const memberName = member.name ? member.name : null;
+      const movieTitle = member.title ? member.title : null;
+
+      crew[member.job] = crew[member.job]
+        ? crew[member.job].concat([
+            { name: memberName, title: movieTitle, id: member.id },
+          ])
+        : [{ name: memberName, title: movieTitle, id: member.id }];
+    }
+  });
+
+  return crew;
+};
