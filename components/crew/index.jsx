@@ -5,13 +5,13 @@ import Link from "next/link";
 export default function Crew({ crew, cast, actor }) {
   return (
     <div>
+      <h2> Crew </h2>
       {actor && (
         <div>
-          <h2> Acting </h2>
+          <h3> Acting </h3>
           {cast.map((movie) => (
             <div key={`movie-cast-${movie.id}`}>
-              <p><Link href={`/movie/${movie.id}`}><a>{movie.title}</a></Link></p>
-              <p> As: {movie.character} </p>
+              <p>{movie.character} in <Link href={`/movie/${movie.id}`}><a>{movie.title}</a></Link></p>
             </div>
           ))}
         </div>
@@ -29,7 +29,7 @@ export default function Crew({ crew, cast, actor }) {
 
         return (
           <div key={position}>
-            <h2> {position}</h2>
+            <h3> {position}</h3>
             {crew[position].map((member) => (
               <p key={`movie-crew-${member.id}`}>
                 {member.title && (

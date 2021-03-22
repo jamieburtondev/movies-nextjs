@@ -5,28 +5,40 @@ import {
   getVideos,
   getReleaseDates,
   getMovieImage,
-  getPositions
+  getPositions,
 } from "../../util";
 import Image from "next/image";
-import Link from "next/link";
-import Crew from '../../components/crew';
-import Cast from '../../components/cast';
+import Crew from "../../components/crew";
+import Cast from "../../components/cast";
+import styles from "./movie.module.css";
 
 export default function SearchMovie({
   result,
   crew,
   cast,
-  videos,
   releaseDates,
 }) {
   return (
-    <div>
-      <h1> {result.title} </h1>
-      <Image src={getMovieImage(result.poster_path)} width={100} height={100} />
-      <p>{result.overview}</p>
-      <Cast cast={cast} />
-      <Crew crew={crew} />
-    </div>
+    <main>
+      <div className={styles.information}>
+        <div className={styles.poster}>
+          <Image
+            src={getMovieImage(result.poster_path)}
+            width={300}
+            height={400}
+          />
+        </div>
+        <div className={styles.details}>
+          <h1> {result.title} </h1>
+          <h2> Overview </h2>
+          <p>{result.overview}</p>
+        </div>
+      </div>
+      <div>
+        <Cast cast={cast} />
+        <Crew crew={crew} />
+      </div>
+    </main>
   );
 }
 

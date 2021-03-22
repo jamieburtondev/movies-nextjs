@@ -11,19 +11,21 @@ export default function List({ title, movies }) {
       <div className={styles.list}>
         {movies.map((movie) => (
           <div className={styles.item} key={`${title}-movie-${movie.id}`}>
-            <Link href={`/${SEARCH.MOVIES}/${movie.id}`}>
-              <a>
-                <Image
-                  src={getMovieImage(movie.poster_path)}
-                  width={100}
-                  height={150}
-                />
-                <p> {movie.title} </p>
-              </a>
-            </Link>
+            <div className={styles.poster}>
+              <Image
+                src={getMovieImage(movie.poster_path)}
+                width={150}
+                height={200}
+              />
+            </div>
+            <p className={styles.title}>
+              <Link href={`/${SEARCH.MOVIES}/${movie.id}`}>
+                <a className={styles.link}>{movie.title}</a>
+              </Link>
+            </p>
           </div>
         ))}
       </div>
     </div>
   );
-};
+}

@@ -1,10 +1,10 @@
 import "../styles/globals.css";
-import Link from 'next/link';
+import Search from "../components/search";
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <Link href="/"><a>Go Home</a></Link>
+      <Search />
       <Component {...pageProps} />
     </div>
   );

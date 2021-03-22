@@ -1,0 +1,22 @@
+.information {
+    display: flex;
+    margin-top: 1em;
+}
+
+.poster {
+    width: 25%;
+    margin-right: 1em;
+}
+
+.poster img {
+    border-radius: 1em;
+}
+
+.details {
+    width: 75%;
+}
+
+.people {
+    width: 100%;
+    display: flex;
+}
