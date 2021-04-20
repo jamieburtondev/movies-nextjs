@@ -5,7 +5,6 @@ import Image from "next/image";
 import styles from "./results.module.css";
 
 export default function Person({ person }) {
-  console.log(`person`, person);
   return (
     <div className={styles.container} key={`person-${person.id}`}>
       <div className={styles.title}>

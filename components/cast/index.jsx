@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { getMovieImage } from "../../util";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,8 +6,8 @@ import styles from "./cast.module.css";
 
 export default function Cast({ cast }) {
   return (
-    <div>
-      <h2> Cast </h2>
+    <Fragment>
+      <h3 className={styles.title}> Cast </h3>
       <div className={styles.list}>
         {cast.map((member) => (
           <div className={styles.element} key={`cast-${member.id}`}>
@@ -24,6 +25,6 @@ export default function Cast({ cast }) {
           </div>
         ))}
       </div>
-    </div>
+    </Fragment>
   );
 }

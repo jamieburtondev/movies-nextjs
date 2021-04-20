@@ -1,14 +1,29 @@
 .container {
     display: flex;
-    border: 2px solid black;
-    border-radius: 1em;
-    margin-bottom: 1em;
-    padding: .5em 1em;
+    margin: 1em 0;
+    padding: .5em 1em .5em 0;
+}
+
+.poster {
+    flex-direction: column;
+    padding-right: 1em;
+    min-width: 10%;
+}
+
+.poster img {
+    border-radius: .5em;
+    width: 100%;
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
-    padding-right: 1em;
-    min-width: 15%;
+    padding-bottom: .5em;
+}
+
+.title a {
+    text-decoration: none;
+    color: black;
+}
+
+.title a:hover {
+    color: blue;
 }

@@ -3,13 +3,13 @@ import Person from "./person";
 
 export default function Results({ content, movie, person }) {
   return (
-    <div>
+    <main>
       {content.map((element, index) => (
         <div key={`element-${index}`}>
           { movie && <Movie movie={element} /> }
           { person && <Person person={element} /> }
         </div>
       ))}
-    </div>
+    </main>
   );
 }

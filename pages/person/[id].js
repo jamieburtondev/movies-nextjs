@@ -2,30 +2,44 @@ import {
   getPerson,
   getPersonCredits,
   getMovieImage,
-  getPositions
+  getPositions,
 } from "../../util";
 import Image from "next/image";
-import Crew from '../../components/crew';
+import Crew from "../../components/crew";
 import { CREW } from "../../constants";
+import styles from "./person.module.css";
 
 export default function Person({ person, credits, crew, cast }) {
   const actor = person.known_for_department === "Acting";
   return (
-    <div>
-      <h1> {person.name}</h1>
-      {person.profile_path && (
-        <Image
-          src={getMovieImage(person.profile_path)}
-          width={100}
-          height={150}
-        />
-      )}
-      <p> Birth: {person.birthday} </p>
-      <p> Death: {person.deathday} </p>
-      <p> Biography: {person.biography} </p>
-
-      <Crew crew={crew} cast={cast} actor={actor} />
-    </div>
+    <main>
+      <div className={styles.information}>
+        <div className={styles.poster}>
+          {person.profile_path && (
+            <Image
+              src={getMovieImage(person.profile_path)}
+              width={300}
+              height={400}
+            />
+          )}
+        </div>
+        <div className={styles.details}>
+          <h2> {person.name}</h2>
+          <p>
+            {person.birthday}
+            {person.deathday && ` - ${person.deathday}`}
+          </p>
+          {person.biography && (
+            <div>
+              <h3> Biography </h3> <p> {person.biography} </p>
+            </div>
+          )}
+        </div>
+      </div>
+      <div>
+        <Crew crew={crew} cast={cast} actor={actor} />
+      </div>
+    </main>
   );
 }
 
@@ -43,7 +57,7 @@ export async function getServerSideProps({ params }) {
       person,
       credits,
       crew,
-      cast
+      cast,
     },
   };
 }

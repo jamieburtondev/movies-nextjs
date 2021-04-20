@@ -29,8 +29,8 @@ export default function SearchMovie({
           />
         </div>
         <div className={styles.details}>
-          <h1> {result.title} </h1>
-          <h2> Overview </h2>
+          <h2> {result.title} </h2>
+          <h3> Overview </h3>
           <p>{result.overview}</p>
         </div>
       </div>
