@@ -4,12 +4,20 @@
 
 .list {
   display: flex;
-}
-
-.element {
-  width: 25%;
+  justify-content: space-between;
 }
 
 .element img {
-  border-radius: 1em;
+  border-radius: .5em;
+  border: .2em solid white !important;
+}
+
+.actor {
+  font-size: 1.25em;
+  color: white;
+  margin-bottom: .25em;
+}
+
+.character {
+
 }

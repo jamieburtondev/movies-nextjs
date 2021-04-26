@@ -1,6 +1,11 @@
+.heading {
+    margin-bottom: .5em;
+}
+
 .list {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1.5em;
 }
 
 .item {

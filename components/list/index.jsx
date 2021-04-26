@@ -8,7 +8,7 @@ import styles from "./list.module.css";
 export default function List({ title, movies }) {
   return (
     <Fragment>
-      <h2> {title} </h2>
+      <h2 className={styles.heading}> {title} </h2>
       <div className={styles.list}>
         {movies.map((movie) => (
           <div className={styles.item} key={`${title}-movie-${movie.id}`}>

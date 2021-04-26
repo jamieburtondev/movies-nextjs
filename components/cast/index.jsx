@@ -12,16 +12,17 @@ export default function Cast({ cast }) {
         {cast.map((member) => (
           <div className={styles.element} key={`cast-${member.id}`}>
             <Image
+              className="image"
               height={150}
               width={100}
               src={getMovieImage(member.profile_path)}
             />
-            <p>
+            <p className={styles.actor}>
               <Link href={`/person/${member.id}`}>
                 <a>{member.name}</a>
               </Link>
             </p>
-            <p> {member.character} </p>
+            <p className={styles.character}> {member.character} </p>
           </div>
         ))}
       </div>
