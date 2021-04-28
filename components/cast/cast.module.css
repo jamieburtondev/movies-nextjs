@@ -1,5 +1,13 @@
+.cast {
+  padding-bottom: 2em;
+  border-top: 3px solid rgba(255,255,255,.1);
+  border-bottom: 3px solid rgba(255,255,255,.1);
+}
+
 .title {
   margin: 1em 0;
+  font-size: 1.75em;
+  text-align: center;
 }
 
 .list {
@@ -7,15 +15,23 @@
   justify-content: space-between;
 }
 
-.element img {
+.element {
+  text-align: center;
+}
+
+.image {
   border-radius: .5em;
   border: .2em solid white !important;
 }
 
 .actor {
+  display: block;
   font-size: 1.25em;
   color: white;
-  margin-bottom: .25em;
+  margin: .5em 0 .25em;
+  text-decoration: none;
+  padding-bottom: .1em;
+  border-bottom: 1.5px solid white;
 }
 
 .character {

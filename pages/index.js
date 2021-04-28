@@ -14,7 +14,7 @@ export default function Home(props) {
 
       <main >
         <List title={"Now Playing"} movies={nowPlaying} />
-        <List title={"Upcoming"} movies={upcoming} />
+        {/* <List title={"Upcoming"} movies={upcoming} /> */}
       </main>
     </div>
   );

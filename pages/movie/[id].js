@@ -19,7 +19,7 @@ export default function SearchMovie({
   releaseDates,
 }) {
   return (
-    <main>
+    <main className={styles.movie}>
       <div className={styles.information}>
         <div className={styles.poster}>
           <Image

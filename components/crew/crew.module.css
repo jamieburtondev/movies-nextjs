@@ -1,7 +1,38 @@
 .title {
-    margin: .5em 0;
+    font-size: 1.75em;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.acting {
+    font-size: 1.5em;
+    margin-bottom: .5em;
+}
+
+.character {
+    font-size: 1.1em;
+    margin-bottom: .5em;
+}
+
+.movie {
+    color: white !important;
 }
 
 .position {
     margin-bottom: 1em;
+}
+
+.heading {
+    font-size: 1.25em;
+    margin-bottom: .25em;
+}
+
+.name {
+    color: rgba(255,255,255, .9);
+    font-size: 1em;
+    text-decoration: none;
+    margin-bottom: .25em;
+    padding-bottom: .1em;
+    border-bottom: 1px solid white;
+    display: inline-block;
 }
